@@ -1,0 +1,25 @@
+# Copier en .env puis adapter
+AWS_ACCESS_KEY_ID=test
+AWS_SECRET_ACCESS_KEY=test
+AWS_DEFAULT_REGION=us-east-1
+AWS_ENDPOINT=http://localhost:4566
+
+# Endpoint vu DEPUIS les conteneurs Lambda (pas localhost !)
+LAMBDA_AWS_ENDPOINT=http://host.docker.internal:4566
+
+# Clé YouTube Data API v3. Mettre MOCK pour tester sans clé.
+YOUTUBE_API_KEY=MOCK
+REGIONS=MA,FR,US
+MAX_SHORT_SECONDS=180
+
+# Règles d'alerte
+TOP_N_ALERT=20
+RANK_JUMP=10
+COOLDOWN_MIN=360
+
+# Optionnel : notification Telegram (sinon simple log)
+TELEGRAM_BOT_TOKEN=
+TELEGRAM_CHAT_ID=
+
+# Planification
+SCHEDULE_EXPRESSION=rate(15 minutes)

@@ -1,0 +1,12 @@
+services:
+  floci:
+    image: floci/floci:latest
+    container_name: floci
+    ports:
+      - "4566:4566"
+    volumes:
+      - ./data:/app/data
+      # Nécessaire pour que Floci lance les Lambdas dans de vrais conteneurs Docker
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
